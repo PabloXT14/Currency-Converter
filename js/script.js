@@ -22,7 +22,26 @@ for(let i=0; i < dropList.length; i++) {
         dropList[i].insertAdjacentHTML("beforeend", optionTag)
         //dropList[i].innerHTML += optionTag
     }
+    dropList[i].addEventListener("change", e => {
+        loadFlag(e.target); //calling loadFlag with passing target element as an argument
+    })
 }
+
+function loadFlag(element) {
+    for(code in country_code) {
+        // if currency code of country list is equal to option value
+        if(code == element.value) { 
+            // selecting img tag of particular drop list
+            let imgTag = element.parentElement.querySelector("img");
+            //passing country code of a selected currency code in a img url
+            imgTag.src = `https://www.countryflags.io/${country_code[code]}/flat/64.png`
+        }
+    }
+}
+
+window.addEventListener("load", ()=> {
+    getExchangeRate();
+})
 
 
 getButton.addEventListener("click", e=> {
@@ -34,6 +53,7 @@ getButton.addEventListener("click", e=> {
 
 function getExchangeRate() {
     const amount = document.querySelector(".amount input")
+    const exchangeRateTxt = document.querySelector(".exchange-rate")
     let amountVal = amount.value.trim();
 
     // if user don't enter any value or enter 0 then we'll put 1 value by default in the input field
@@ -42,11 +62,22 @@ function getExchangeRate() {
         amountVal = 1;
     }
 
+    exchangeRateTxt.innerHTML = "Getting exchange rate..."
+
     // using Exchange rate API for this project (site: Exchange Rate API Free)
     let url = ` https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency.value}`
-    fetch(url).then(response => console.log(response.json()))
 
-    //teste
-    let result = `${amountVal} ${fromCurrency.value} = `
+    // fetching api response and returning it with parsing into js obj and in another then method receiving that obj
+    fetch(url).then(response => response.json()).then(result => {
+        let exchangeRate = result.conversion_rates[toCurrency.value]
+        //console.log(exchangeRate)
+        let totalExchangeRate = (amountVal * exchangeRate).toFixed(2)
+        console.log(totalExchangeRate)
+
+        
+        exchangeRateTxt.innerHTML = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value} `
+    })
+
+    
 }
 
