@@ -12,10 +12,8 @@ Projeto Currency Converter ([conteúdo de referência](https://www.youtube.com/w
 ✔ JavaScript
 <br>
 ✔ API Exchange Rate API Free ([Link site da API](https://www.exchangerate-api.com/))
+  * Através desta conseguiu-se obter as taxas de um tipo de moeda escolhido em relação a todas as outras opções de moeda. 
 
-```
-Através desta conseguiu-se obter as taxas de um tipo de moeda escolhido em relação a todas as outras opções de moeda. 
-```
 ✔ IDE: VS Code
 
 ## ⚙ Settings
