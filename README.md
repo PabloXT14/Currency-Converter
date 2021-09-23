@@ -1,5 +1,5 @@
 # Currency Converter (Conversor de Moeda)
-Projeto Currency Converter ([conteúdo de referência](https://www.youtube.com/watch?v=UY7F37KHyI8)) feito com HTML, CSS, JavaScript e uma API externa, neste projeto teve-se como principal objetivo treinar a utilização de uma API externa, juntamente com isto a utilização de funções asíncronas do JavaScript, como `fetch` e `catch`, entre outras habilidades desenvolvidas.
+Projeto Currency Converter ([conteúdo de referência](https://www.youtube.com/watch?v=UY7F37KHyI8)) feito com HTML, CSS, JavaScript e uma API externa, neste projeto teve-se como principal objetivo treinar a utilização da API externa, juntamente com isto a utilização de funções do JavaScript como `fetch` e `catch` (para conseguir utilizar a API), entre outras habilidades desenvolvidas.
 
 ## 📷 Demonstration
 <img src="./images/Demonstration-Currency_Converter.gif" alt="Imagem de Demostração"> 
