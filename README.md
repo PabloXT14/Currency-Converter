@@ -17,6 +17,6 @@ Projeto Currency Converter ([conteúdo de referência](https://www.youtube.com/w
 ✔ IDE: VS Code
 
 ## ⚙ Settings
-* Para executar o projeto basta rodar o arquivo index em algum browser
+* Para executar o projeto basta rodar o arquivo `index.html` em algum browser
 * Ou acessar: https://pabloxt14.github.io/Currency-Converter/
 * Obs: a página está responsiva, então pode executá-la até mesmo no celular
